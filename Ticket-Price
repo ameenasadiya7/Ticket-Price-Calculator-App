@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Ticket {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome to Ticket Price Calculator App!");
+        System.out.print("Enter your Name: ");
+        String userName = sc.nextLine();
+        System.out.print("Enter price per ticket: ");
+        double pricePerTicket = sc.nextDouble();
+        System.out.print("Enter number of tickets: ");
+        int numberOfTickets = sc.nextInt();
+        // Calculating total price
+        double totalPrice = pricePerTicket * numberOfTickets;
+        System.out.println("\nHello, " + userName + "!");
+        System.out.println("Total Price: Rs." + totalPrice);
+        // Discount Calculation
+        if (numberOfTickets >= 5) {
+            double discount = totalPrice * 0.10; // 10% Discount for 5 or more tickets
+            totalPrice -= discount;
+            System.out.println("Discount Applied: 10%\nFinal Price: Rs." + totalPrice);
+        } else {
+            System.out.println("No Discount Applied.");
+        }
+        System.out.println("Thank You for Using the App!");
+    }
+}
